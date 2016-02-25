@@ -37,14 +37,14 @@
 			</fieldset>
 		</fields>
 	</config>
-	<files folder="plugin" destination="rsig">
+	<files>
 		<filename plugin="rsig">rsig.php</filename>
 		<filename>images.php</filename>
 		<folder>engines</folder>
 		<folder>tmpl</folder>
 	</files>
 
-	<languages folder="plugin">
+	<languages>
 		<language tag="en-GB">language/en-GB/en-GB.plg_content_rsig.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.plg_content_rsig.sys.ini</language>
 	</languages>

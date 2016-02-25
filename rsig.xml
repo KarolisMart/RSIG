@@ -44,9 +44,9 @@
 		<folder>tmpl</folder>
 	</files>
 
-	<languages>
-		<language tag="en-GB">language/en-GB/en-GB.plg_content_rsig.ini</language>
-		<language tag="en-GB">language/en-GB/en-GB.plg_content_rsig.sys.ini</language>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_rsig.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_rsig.sys.ini</language>
 	</languages>
 	<updateservers>
 		<server type="extension" priority="1" name="Responsive Simple Image Gallery">https://martinkus.eu/rsig/update.xml</server>

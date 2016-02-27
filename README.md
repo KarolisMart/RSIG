@@ -3,7 +3,7 @@ Another Simple Image Gallery based gallery plugin, this time with a focus on pro
 Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.com/)
 
 ## Usage
-To use this plugin simply install, enable it and include an activation tag in article where you want you gallery displayed.
+To use this plugin simply install, enable it and include an activation tag in article where you want your gallery displayed.
 
 Activation tag sintax:
 {gallery}mygalleryfolder{gallery}

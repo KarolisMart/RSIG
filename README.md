@@ -41,4 +41,4 @@ Insert a space if you dont wish to pass any custom options to Photoswipe, by def
 
 If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options to Photoswipe: 
 
-`mainClass: 'pswp--minimal--dark', options.barsSize: {top:0,bottom:0}, options.captionEl: false, options.fullscreenEl: false, options.shareEl: false, options.bgOpacity: 0.85, options.tapToClose: true, options.tapToToggleControls: false`
+`mainClass: 'pswp--minimal--dark', barsSize: {top:0,bottom:0}, captionEl: false, fullscreenEl: false, shareEl: false, bgOpacity: 0.85, tapToClose: true, tapToToggleControls: false,`

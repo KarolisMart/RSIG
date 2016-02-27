@@ -39,6 +39,6 @@ Here you can set:
 
 Insert a space if you dont wish to pass any custom options to Photoswipe, by default `shareEl: true` option is passed.
 
-If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options: 
+If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options to Photoswipe: 
 
 `mainClass: 'pswp--minimal--dark', options.barsSize: {top:0,bottom:0}, options.captionEl: false, options.fullscreenEl: false, options.shareEl: false, options.bgOpacity: 0.85, options.tapToClose: true, options.tapToToggleControls: false`

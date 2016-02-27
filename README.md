@@ -4,6 +4,7 @@ Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.
 
 ## Usage
 To use this plugin simply install, enable it and include an activation tag in article where you want you gallery displayed.
+
 Activation tag sintax:
 {gallery}mygalleryfolder{gallery}
 by default root folder where plugin will look for mygalleryfolder defined in activation tag is images, this can be changed ins plugins advanced settings.
@@ -21,7 +22,9 @@ Displays images using [Masonry](http://masonry.desandro.com/) js library. Its re
 
 ##### Thumbnail size
 Thumbnails are resized to fit in the defined height and width, keeping original aspect ratio.
+
 For examaple if you have an 1500x1000 image and set thubnail height to 200px and width to 200px image will be resized to 133x200, fitting the larger dimention, and resizing the other to keep the aspect ratio.
+
 Its possible to set height to 0, so that all images would have same width and varying heights. Its also possible to set width to 0 to have same heigh and different width for all the images.
 
 ##### Image pixel density

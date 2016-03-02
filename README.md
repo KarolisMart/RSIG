@@ -3,7 +3,7 @@ Another Simple Image Gallery based gallery plugin, this time with a focus on pro
 Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.com/)
 
 ## Usage
-To use this plugin simply install, enable it and include an activation tag in article where you want your gallery displayed.
+To use this plugin simply download zip of this repository, install, enable it and include an activation tag in article where you want your gallery displayed.
 
 Activation tag sintax:
 `{gallery}mygalleryfolder{gallery}`
@@ -42,3 +42,8 @@ Insert a space if you dont wish to pass any custom options to Photoswipe, by def
 If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options to Photoswipe: 
 
 `mainClass: 'pswp--minimal--dark', barsSize: {top:0,bottom:0}, captionEl: false, fullscreenEl: false, shareEl: false, bgOpacity: 0.85, tapToClose: true, tapToToggleControls: false`
+
+## Coming soon
+* Srcset support
+* Captions with caption.js and sigplus like caption files
+* Ability to set prameters in  activation tags.

@@ -94,26 +94,44 @@ class plgContentRSIG extends JPlugin {
 		$pluginParams = class_exists('JParameter') ? new JParameter($plugin->params) : new JRegistry($plugin->params);
 
 		$galleries_rootfolder = ($params->get('galleries_rootfolder')) ? $params->get('galleries_rootfolder') : $pluginParams->get('galleries_rootfolder', $defaultImagePath);
+		
+		// Add masonry engine if using Masonry layout
 		if ($pluginParams->get('layout', 'flow')=='masonry'){
 			$engines = array('masonry', 'photoswipe');
 		}
 		else {
 			$engines = array('photoswipe');
 		}
-		$thb_template = 'default';
 		$thb_width = (!is_null($params->get('thb_width', null))) ? $params->get('thb_width') : $pluginParams->get('thb_width', 200);
 		$thb_height = (!is_null($params->get('thb_height', null))) ? $params->get('thb_height') : $pluginParams->get('thb_height', 200);
 		$crop = 0;
-		$margin = $pluginParams->get('margin', 2);;
+		$margin = $pluginParams->get('margin', 5);
 		$pixel_density = $pluginParams->get('pixel_density', 1);
 		$load_cdn = $pluginParams->get('load_cdn', 1);
-		$jpg_quality = $pluginParams->get('jpg_quality', 85);
 		$showcaptions = 0;
-		$cache_expire_time = $pluginParams->get('cache_expire_time', 1440) * 60; // Cache expiration time in minutes
 		// Advanced
+		$jpg_quality = $pluginParams->get('jpg_quality', 85);
+		$cache_expire_time = $pluginParams->get('cache_expire_time', 1440) * 60; // Cache expiration time in minutes
 		$memoryLimit = (int)$pluginParams->get('memoryLimit');
+		$photoswipe_options = (stripos($pluginParams->get('photoswipe_options', 'shareEl: false'), ':')) ? $pluginParams->get('photoswipe_options', 'shareEl: false').',' : '' ; // Simplistic check to not brake js, propably should be improved
 		if ($memoryLimit) ini_set("memory_limit", $memoryLimit."M");
-
+		// Set different template and widths according to colum values if using Grid layout
+		if ($pluginParams->get('layout', 'flow')=='grid'){
+			$thb_template = 'grid';
+			// Convert number of columns to appropriate widths
+			$col_xs_width= 100/$pluginParams->get('columns_xs', 1) - 2*$margin;
+			$col_sm_width= 100/$pluginParams->get('columns_sm', 3) - ceil(2*$margin/768);// margins of adjacent flex items do not collapse.
+			$col_md_width= 100/$pluginParams->get('columns_md', 3) - ceil(2*$margin/992);
+			$col_lg_width= 100/$pluginParams->get('columns_lg', 4) - ceil(2*$margin/1200);
+			$document->addStyleDeclaration("@media (max-width: 767px) {.rsig-item {width: {$col_xs_width}%;}}");
+			$document->addStyleDeclaration("@media (min-width: 768px) {.rsig-item {width: {$col_sm_width}%;}}");
+			$document->addStyleDeclaration("@media (min-width: 992px) {.rsig-item {width: {$col_md_width}%;}}");
+			$document->addStyleDeclaration("@media (min-width: 1200px) {.rsig-item {width: {$col_lg_width}%;}}");
+		}
+		else{
+			$thb_template = 'default';
+		}
+		
 		// Cleanups
 		// Remove first and last slash if they exist
 		if (substr($galleries_rootfolder, 0, 1) == '/') $galleries_rootfolder = substr($galleries_rootfolder, 1);

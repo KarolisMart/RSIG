@@ -7,7 +7,7 @@
  */
 
 .rsig-gallery a:active, .rsig-gallery a:focus {outline:0}
-.rsig-gallery{font-size: 0;}
+.rsig-gallery{font-size: 0; text-align: center}
 .rsig-item{display: inline-block; position: relative; vertical-align: middle}
 .rsig-img{display: inline-block; max-width: 100%}
 

@@ -169,7 +169,7 @@ if(!defined('PE_photoswipe_LOADED')){
 			    options = {
 
 			        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-					shareEl: false,
+					{$photoswipe_options}
 			        getThumbBoundsFn: function(index) {
 			            // See Options->getThumbBoundsFn section of docs for more info
 			            var thumbnail = items[index].el.children[0],

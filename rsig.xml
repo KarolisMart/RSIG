@@ -12,7 +12,6 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="galleries_rootfolder" type="text" default="images" label="RSIG_ROOTFOLDER" description="RSIG_ROOTFOLDER_DESC" />
 				<field name="layout" type="list" default="flow" label="RSIG_LAYOUT" description="RSIG_LAYOUT_DESC">
 					<option value="flow">RSIG_FLOW</option>
 					<option value="grid">RSIG_GRID</option>
@@ -20,20 +19,26 @@
 				</field>
 				<field name="thb_width" type="text" default="200" size="3" label="RSIG_TW" description="RSIG_TW_DESC" />
 				<field name="thb_height" type="text" default="200" size="3" label="RSIG_TH" description="RSIG_TH_DESC" />
-				<field name="margin" type="text" default="2" size="3" label="RSIG_MARGIN" description="RSIG_MARGIN_DESC" />
+				<field name="margin" type="text" default="5" size="3" label="RSIG_MARGIN" description="RSIG_MARGIN_DESC" />
 				<field name="pixel_density" type="radio" default="1" label="RSIG_PIXEL_DENSITY" description="RSIG_PIXEL_DENSITY_DESC">
 					<option value="1">RSIG_PIXEL_DENSITY_NORMAL</option>
 					<option value="2">RSIG_PIXEL_DENSITY_2X</option>
 				</field>
+				<field name="columns_xs" type="text" default="1" size="2" label="RSIG_COL_XS" description="RSIG_COL_XS_DESC" />
+				<field name="columns_sm" type="text" default="3" size="2" label="RSIG_COL_SM" description="RSIG_COL_SM_DESC" />
+				<field name="columns_md" type="text" default="3" size="2" label="RSIG_COL_MD" description="RSIG_COL_MD_DESC" />
+				<field name="columns_lg" type="text" default="4" size="2" label="RSIG_COL_LG" description="RSIG_COL_LG_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="galleries_rootfolder" type="text" default="images" label="RSIG_ROOTFOLDER" description="RSIG_ROOTFOLDER_DESC" />
+				<field name="jpg_quality" type="text" default="85" size="3" label="RSIG_TQ" description="RSIG_TQ_DESC" />
+				<field name="cache_expire_time" type="text" default="1440" size="3" label="RSIG_TCEXP" description="RSIG_TCEXP_DESC" />
+				<field name="memoryLimit" type="text" default="" size="3" label="RSIG_ML" description="RSIG_ML_DESC" />
 				<field name="load_cdn" type="radio" default="1" label="RSIG_CDN" description="RSIG_CDN_DESC">
 					<option value="1">RSIG_LOAD_FROM_CDN</option>
 					<option value="0">RSIG_LOAD_LOCAL</option>
 				</field>
-			</fieldset>
-			<fieldset name="advanced">
-				<field name="jpg_quality" type="text" default="85" size="3" label="RSIG_TQ" description="RSIG_TQ_DESC" />
-				<field name="cache_expire_time" type="text" default="1440" size="3" label="RSIG_TCEXP" description="RSIG_TCEXP_DESC" />
-				<field name="memoryLimit" type="text" default="" size="3" label="RSIG_ML" description="RSIG_ML_DESC" />
+				<field name="photoswipe_options" type="text" default="shareEl: false" label="RSIG_PSWP_OPTIONS" description="RSIG_PSWP_OPTIONS_DESC" />
 			</fieldset>
 		</fields>
 	</config>

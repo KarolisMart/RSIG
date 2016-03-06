@@ -47,3 +47,4 @@ If you want to get lightbox just like the Minimal style one in [Photoswipe demo]
 * Srcset support
 * Captions with caption.js and sigplus like caption files
 * Ability to set prameters in  activation tags.
+* Proper demo. For now you can see this gallery in action in my (test page)[https://test.martinkus.eu/]

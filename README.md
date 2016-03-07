@@ -15,7 +15,7 @@ by default root folder where plugin will look for mygalleryfolder defined in act
 Displays images as inline elements, so they wrap around like text would.
 
 ###### Grid
-Displays images in bootstrap grid in specified number of collums per breakpoint.
+Displays images in flexbox grid with specified number of collums per breakpoint.
 
 ###### Masonry
 Displays images using [Masonry](http://masonry.desandro.com/) js library. Its recomended to set thumbnail hieght to 0 so that all images would have the same width (See below).

@@ -19,17 +19,13 @@ class plgContentRSIG extends JPlugin {
 	var $plg_name					= "rsig";
 	var $plg_tag					= "gallery";
 
-	function plgContentRSIG( &$subject, $params ){
-		parent::__construct( $subject, $params );
-
+	function onContentPrepare($context, &$row, &$params, $page = 0){
 		// Define the DS constant under Joomla! 3.0+
 		if (!defined('DS')){
 			define('DS', DIRECTORY_SEPARATOR);
 		}
-	}
-
-	function onContentPrepare($context, &$row, &$params, $page = 0){
 		$this->renderGallery($row, $params, $page = 0);
+		
 	}
 	
 	// Main function

@@ -6,7 +6,7 @@ Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.
 To use this plugin simply download zip of this repository, install, enable it and include an activation tag in article where you want your gallery displayed.
 
 Activation tag sintax:
-`{gallery}mygalleryfolder{gallery}`
+`{gallery}mygalleryfolder{/gallery}`
 by default root folder where plugin will look for mygalleryfolder defined in activation tag is images, this can be changed ins plugins advanced settings.
 
 ## Settings

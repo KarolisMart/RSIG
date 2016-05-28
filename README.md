@@ -37,7 +37,7 @@ Here you can set:
 * Where from you wish to load requiered engines like Photoswipe and Masonry. By default they are loaded using CDN
 * Options that are passed to Photoswipe, as per [Photoswipe documentation](http://photoswipe.com/documentation/options.html) 
 
-Insert a space if you dont wish to pass any custom options to Photoswipe, by default `shareEl: true` option is passed.
+Insert a space if you dont wish to pass any custom options to Photoswipe, by default `shareEl: false` option is passed.
 
 If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options to Photoswipe: 
 

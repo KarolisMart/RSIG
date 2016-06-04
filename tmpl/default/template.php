@@ -14,8 +14,13 @@ defined('_JEXEC') or die('Restricted access');
 
 <div id="rsigId<?php echo $gal_id; ?>" class="rsig-gallery<?php echo $extraWrapperClasses; ?>">
 	<?php foreach($gallery as $count=>$photo): ?>
-	<a href="<?php echo $photo->sourceImageFilePath; ?>" class="rsig-item<?php echo $extraClasses; ?>" data-size="<?php echo $photo->fullwidth; ?>x<?php echo $photo->fullheight; ?>"  target="_blank"<?php echo $customLinkAttributes; ?>>
-		<img class="rsig-img" src="<?php echo $photo->thumbImageFilePath; ?>" style="width:<?php echo $photo->thumb_width;?>px;height:<?php echo $photo->thumb_height; ?>px;"/>
-	</a>
+	<figure class="rsig-item<?php echo $extraClasses; ?>" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="<?php echo $photo->sourceImageFilePath; ?>" data-size="<?php echo $photo->fullwidth; ?>x<?php echo $photo->fullheight; ?>" target="_blank"<?php echo $customLinkAttributes; ?>>
+			<img class="rsig-img" src="<?php echo $photo->thumbImageFilePath; ?>" data-caption="<?php echo $photo->caption; ?>" style="width:<?php echo $photo->thumb_width;?>px;height:<?php echo $photo->thumb_height; ?>px;"/>
+		</a>
+		<?php if(!empty($photo->caption)): ?>
+			<figcaption itemprop="caption description"><?php echo $photo->caption; ?></figcaption>
+		<?php endif ?>
+	</figure>
 	<?php endforeach; ?>
 </div>

@@ -104,7 +104,8 @@ class plgContentRSIG extends JPlugin {
 		$margin = $pluginParams->get('margin', 5);
 		$pixel_density = $pluginParams->get('pixel_density', 1);
 		$load_cdn = $pluginParams->get('load_cdn', 1);
-		$showcaptions = 0;
+		$overlay_captions = $pluginParams->get('overlay_captions', 0);
+		$show_captions = 1;
 		// Advanced
 		$jpg_quality = $pluginParams->get('jpg_quality', 85);
 		$cache_expire_time = $pluginParams->get('cache_expire_time', 1440) * 60; // Cache expiration time in minutes
@@ -158,7 +159,7 @@ class plgContentRSIG extends JPlugin {
 				$gal_id = substr(md5($key.$srcimgfolder), 1, 10);
 
 				// Render the gallery
-				$gallery = rsigImageGallery::renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id);
+				$gallery = rsigImageGallery::renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions);
 
 				if (!$gallery){
 					JError::raiseNotice('', JText::_('RSIG_NOTICE_03').' '.$srcimgfolder);
@@ -245,6 +246,10 @@ class plgContentRSIG extends JPlugin {
 					$pluginCSS = $pluginCSS->http;
 					$document->addStyleSheet($pluginCSS, 'text/css', 'screen');
 					$document->addStyleDeclaration('.rsig-item {margin: '.$margin.'px}');
+					// Hide overlay captions
+					if (!$overlay_captions){
+						$document->addStyleDeclaration('.rsig-gallery figure figcaption {display: none !important;}');
+					}
 				}
 
 				// Fetch the template

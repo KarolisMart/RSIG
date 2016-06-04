@@ -20,6 +20,10 @@
 				<field name="thb_width" type="text" default="200" size="3" label="RSIG_TW" description="RSIG_TW_DESC" />
 				<field name="thb_height" type="text" default="200" size="3" label="RSIG_TH" description="RSIG_TH_DESC" />
 				<field name="margin" type="text" default="5" size="3" label="RSIG_MARGIN" description="RSIG_MARGIN_DESC" />
+				<field name="overlay_captions" type="radio" default="0" label="RSIG_OVERLAY_CAPTIONS" description="RSIG_OVERLAY_CAPTIONS_DESC">
+					<option value="0">RSIG_OVERLAY_CAPTIONS_FALSE</option>
+					<option value="1">RSIG_OVERLAY_CAPTIONS_TRUE</option>
+				</field>
 				<field name="pixel_density" type="radio" default="1" label="RSIG_PIXEL_DENSITY" description="RSIG_PIXEL_DENSITY_DESC">
 					<option value="1">RSIG_PIXEL_DENSITY_NORMAL</option>
 					<option value="2">RSIG_PIXEL_DENSITY_2X</option>

@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 
 class rsigImageGallery {
 
-	public static function renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id)
+	public static function renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions)
 	{
 
 		// API
@@ -67,6 +67,24 @@ class rsigImageGallery {
 		// Bail out if there are no images found
 		if (count($found) == 0)
 			return;
+		
+		// Get captions
+		$captions[] = false;
+		if( $show_captions ){
+			$captionFile = $srcimgfolder.'/captions.txt';
+			if(file_exists($captionFile))
+			{
+				$captionFile = array_map('trim', file($captionFile));
+				foreach($captionFile as $line)
+				{
+					if(!empty($line))
+					{
+						$lineSplit = explode('|', $line);
+						$captions[$lineSplit[0]] = $lineSplit[1];
+					}
+				}
+			}
+		}
 
 		// Sort array
 		sort($found);
@@ -166,6 +184,7 @@ class rsigImageGallery {
 
 			// Assemble the image elements
 			$gallery[$key]->filename = $filename;
+			$gallery[$key]->caption = array_key_exists ( $filename, $captions ) ? $captions[$filename] : "";
 			$gallery[$key]->sourceImageFilePath = $siteUrl.$srcimgfolder.'/'.static::replaceWhiteSpace($filename);
 			$gallery[$key]->thumbImageFilePath = $siteUrl.'cache/rsig/'.$prefix.$gal_id.'_'.strtolower(static::cleanThumbName($thumbfilename));
 			$gallery[$key]->width = $thb_width;

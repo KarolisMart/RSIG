@@ -9,6 +9,16 @@ Activation tag sintax:
 `{gallery}mygalleryfolder{/gallery}`
 by default root folder where plugin will look for mygalleryfolder defined in activation tag is images, this can be changed ins plugins advanced settings.
 
+Caption file should be named `captions.txt` or `en-GB.txt` for multilanguage captions. Of course any langue code can be used.
+
+Caption file example:
+```
+gal_1.jpg|Caption
+gal_2.jpg|Another Caption
+gal_3.jpg|Yet Another Caption
+```
+Images are currently ordered by name and not by order in the caption file.
+
 ## Settings
 ##### Layout
 ###### Flow
@@ -30,6 +40,9 @@ Its possible to set height to 0, so that all images would have same width and va
 ##### Image pixel density
 Currently retina images have 2x the pixel density, and are loaded in all devices, in future this will be changed to use srcset attribute, and various sized images.
 
+##### Overlay captions
+Set to true if you want to use overlay captions. Pure CSS solution, won't look as good in IE8 or lower. 
+
 ##### Advanced settings
 Here you can set:
 * Starting (root) folder for your galleries
@@ -45,6 +58,5 @@ If you want to get lightbox just like the Minimal style one in [Photoswipe demo]
 
 ## Coming soon
 * Srcset support
-* Captions with caption.js and sigplus like caption files
 * Ability to set prameters in plugin activation tags.
 * Proper demo. For now you can see this gallery in action on my [test page](https://test.martinkus.eu/)

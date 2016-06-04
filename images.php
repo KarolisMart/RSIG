@@ -71,10 +71,22 @@ class rsigImageGallery {
 		// Get captions
 		$captions[] = false;
 		if( $show_captions ){
-			$captionFile = $srcimgfolder.'/captions.txt';
-			if(file_exists($captionFile))
-			{
-				$captionFile = array_map('trim', file($captionFile));
+			$langTag = JFactory::getLanguage()->getTag();
+			$langCaptionFile = $srcimgfolder.'/'.$langTag.'.txt';
+			$defaultCaptionFile = $srcimgfolder.'/captions.txt';
+			if (file_exists($langCaptionFile)){
+				$captionFile = array_map('trim', file($langCaptionFile));
+				foreach($captionFile as $line)
+				{
+					if(!empty($line))
+					{
+						$lineSplit = explode('|', $line);
+						$captions[$lineSplit[0]] = $lineSplit[1];
+					}
+				}
+			}
+			elseif (file_exists($defaultCaptionFile)){
+				$captionFile = array_map('trim', file($defaultCaptionFile));
 				foreach($captionFile as $line)
 				{
 					if(!empty($line))

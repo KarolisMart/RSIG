@@ -16,7 +16,7 @@ $extraWrapperClass='grid';
 
 $stylesheets = array();
 $stylesheetDeclarations = array('.grid{margin: 0 auto}');
-$scripts = $load_cdn ? array('https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js') : array('masonry.pkgd.min.js');
+$scripts = $load_cdn ? array('https://unpkg.com/masonry-layout@4.0/dist/masonry.pkgd.min.js') : array('masonry.pkgd.min.js');
 
 $mansonryColWidth = ($thb_height==0) ? ($thb_width + 2 * $margin) : 1; //colum width if images are the same width (height=0 setting is used)
 

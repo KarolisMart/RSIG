@@ -1,6 +1,6 @@
 <?php
 /**
- * @version		0.1
+ * @version		0.3
  * @package		Responsive Simple Image Gallery
  * @author		Karolis Martinkus https://martinkus.eu/
  * @copyright	Copyright (c) 2016 Karolis Martinkus

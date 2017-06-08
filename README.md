@@ -6,7 +6,7 @@ Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.
 To use this plugin simply download zip of this repository, install, enable it and include an activation tag in article where you want your gallery displayed.
 
 Activation tag sintax:
-`{gallery}mygalleryfolder{/gallery}`
+`{gallery}my_gallery_folder{/gallery}`
 by default root folder where plugin will look for mygalleryfolder defined in activation tag is images, this can be changed ins plugins advanced settings.
 
 Caption file should be named `captions.txt` or `en-GB.txt` for multilanguage captions. Of course any langue code can be used.
@@ -29,6 +29,10 @@ Displays images in flexbox grid with specified number of collums per breakpoint.
 
 ###### Masonry
 Displays images using [Masonry](http://masonry.desandro.com/) js library. Its recomended to set thumbnail hieght to 0 so that all images would have the same width (See below).
+
+##### Static thumbnails
+If you wish to provide thumbnails yourself, set this to true.
+Thumbnails must have the same name as the main image, and must be put in thumbnails folder inside your gallery folder `my_gallery_folder/thumbnails`. If thumbnails for some images are missing, the plugin will attempt to generate them.
 
 ##### Thumbnail size
 Thumbnails are resized to fit in the defined height and width, keeping original aspect ratio.

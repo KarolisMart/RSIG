@@ -98,6 +98,7 @@ class plgContentRSIG extends JPlugin {
 		else {
 			$engines = array('photoswipe');
 		}
+		$static_thb = $pluginParams->get('STATIC_THB', 0);
 		$thb_width = (!is_null($params->get('thb_width', null))) ? $params->get('thb_width') : $pluginParams->get('thb_width', 200);
 		$thb_height = (!is_null($params->get('thb_height', null))) ? $params->get('thb_height') : $pluginParams->get('thb_height', 200);
 		$crop = 0;
@@ -159,7 +160,7 @@ class plgContentRSIG extends JPlugin {
 				$gal_id = substr(md5($key.$srcimgfolder), 1, 10);
 
 				// Render the gallery
-				$gallery = rsigImageGallery::renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions);
+				$gallery = rsigImageGallery::renderGallery($srcimgfolder, $static_thb, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions);
 
 				if (!$gallery){
 					JError::raiseNotice('', JText::_('RSIG_NOTICE_03').' '.$srcimgfolder);

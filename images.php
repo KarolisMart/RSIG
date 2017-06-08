@@ -12,7 +12,7 @@ defined('_JEXEC') or die('Restricted access');
 
 class rsigImageGallery {
 
-	public static function renderGallery($srcimgfolder, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions)
+	public static function renderGallery($srcimgfolder, $static_thb, $thb_width, $thb_height, $crop, $pixel_density, $jpg_quality, $cache_expire_time, $gal_id, $show_captions)
 	{
 
 		// API
@@ -32,16 +32,6 @@ class rsigImageGallery {
 		// Internal parameters
 		$prefix = "rsig_cache_";
 
-		// Set the cache folder
-		$cacheFolderPath = JPATH_SITE.DS.'cache'.DS.'rsig';
-		if (file_exists($cacheFolderPath) && is_dir($cacheFolderPath))
-		{
-			// all OK
-		}
-		else
-		{
-			mkdir($cacheFolderPath);
-		}
 
 		// Check if the source folder exists and read it
 		$srcFolder = JFolder::files($sitePath.$srcimgfolder);
@@ -50,6 +40,22 @@ class rsigImageGallery {
 		if (!$srcFolder)
 			return;
 
+		// Set the cache folder, use thumbnails folder if static thumbnails are set to be used
+		if ($static_thb){
+			$cacheFolderPath = $srcimgfolder.DS.'thumbnails';
+		}
+		else {
+			$cacheFolderPath = 'cache'.DS.'rsig';
+		}
+		if (file_exists($sitePath.$cacheFolderPath) && is_dir($sitePath.$cacheFolderPath))
+		{
+			// all OK
+		}
+		else
+		{
+			mkdir($sitePath.$cacheFolderPath);
+		}
+		
 		// Loop through the source folder for images
 		$fileTypes = array('jpg', 'jpeg', 'gif', 'png');
 		// Create an array of file types
@@ -125,9 +131,14 @@ class rsigImageGallery {
 			$original = $sitePath.str_replace('/', DS, $srcimgfolder).DS.$filename;
 
 			// Check if thumb image exists already
-			$thumbimage = $cacheFolderPath.DS.$prefix.$gal_id.'_'.strtolower(static::cleanThumbName($thumbfilename));
-
-			if (file_exists($thumbimage) && is_readable($thumbimage) && (filemtime($thumbimage) + $cache_expire_time) > time())
+			if ($static_thb){
+				$thumbimage = $cacheFolderPath.DS.$thumbfilename;
+			}
+			else{
+				$thumbimage = $cacheFolderPath.DS.$prefix.$gal_id.'_'.strtolower(static::cleanThumbName($thumbfilename));
+			}
+			
+			if (file_exists($thumbimage) && is_readable($thumbimage) && (((filemtime($thumbimage) + $cache_expire_time) > time()) || $static_thb))
 			{
 				// get width and height
 				list($width, $height, $type) = getimagesize($original);
@@ -198,7 +209,7 @@ class rsigImageGallery {
 			$gallery[$key]->filename = $filename;
 			$gallery[$key]->caption = array_key_exists ( $filename, $captions ) ? $captions[$filename] : "";
 			$gallery[$key]->sourceImageFilePath = $siteUrl.$srcimgfolder.'/'.static::replaceWhiteSpace($filename);
-			$gallery[$key]->thumbImageFilePath = $siteUrl.'cache/rsig/'.$prefix.$gal_id.'_'.strtolower(static::cleanThumbName($thumbfilename));
+			$gallery[$key]->thumbImageFilePath = $thumbimage; //$siteUrl.'cache/rsig/'.$prefix.$gal_id.'_'.strtolower(static::cleanThumbName($thumbfilename));
 			$gallery[$key]->width = $thb_width;
 			$gallery[$key]->height = $thb_height;
 			$gallery[$key]->fullwidth = $width;

@@ -17,6 +17,10 @@
 					<option value="grid">RSIG_GRID</option>
 					<option value="masonry">RSIG_MASONRY</option>
 				</field>
+				<field name="STATIC_THB" type="radio" default="0" label="RSIG_STATIC_THB" description="RSIG_STATIC_THB_DESC">
+					<option value="0">STATIC_THB_FALSE</option>
+					<option value="1">STATIC_THB_TRUE</option>
+				</field>
 				<field name="thb_width" type="text" default="200" size="3" label="RSIG_TW" description="RSIG_TW_DESC" />
 				<field name="thb_height" type="text" default="200" size="3" label="RSIG_TH" description="RSIG_TH_DESC" />
 				<field name="margin" type="text" default="5" size="3" label="RSIG_MARGIN" description="RSIG_MARGIN_DESC" />

@@ -2,6 +2,8 @@
 Another Simple Image Gallery based gallery plugin, this time with a focus on providing responsive gallery for todays responsive websites.
 Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.com/)
 
+You can see this gallery in action on my [demo page](https://test.martinkus.eu/)
+
 ## Usage
 To use this plugin simply download zip of this repository, install, enable it and include an activation tag in article where you want your gallery displayed.
 
@@ -59,8 +61,3 @@ Insert a space if you dont wish to pass any custom options to Photoswipe, by def
 If you want to get lightbox just like the Minimal style one in [Photoswipe demo](http://photoswipe.com/), pass these options to Photoswipe: 
 
 `mainClass: 'pswp--minimal--dark', barsSize: {top:0,bottom:0}, captionEl: false, fullscreenEl: false, shareEl: false, bgOpacity: 0.85, tapToClose: true, tapToToggleControls: false`
-
-## Coming soon
-* Srcset support
-* Ability to set prameters in plugin activation tags.
-* Proper demo. For now you can see this gallery in action on my [test page](https://test.martinkus.eu/)

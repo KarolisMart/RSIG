@@ -23,6 +23,9 @@
 	height: auto;
 	object-fit: contain;
 }
+.rsig-sizer{
+	max-width: 100%;
+}
 
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
@@ -33,6 +36,7 @@
 }
 .rsig-gallery figure {
 	overflow: hidden;
+	max-width: 100%;
 }
 
 .rsig-gallery figure img {

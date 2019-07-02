@@ -65,6 +65,11 @@ if(!defined('PE_photoswipe_LOADED')){
 
 					size = linkEl.getAttribute('data-size').split('x');
 
+					// skip if element is not an image wrapped in <a> tag
+					if (typeof linkEl == 'undefined') {
+						continue;
+					}
+					
 					// create slide object
 					item = {
 						src: linkEl.getAttribute('href'),

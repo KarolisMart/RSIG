@@ -44,7 +44,7 @@ if(!defined('PE_photoswipe_LOADED')){
 			// parse slide data (url, title, size ...) from DOM elements 
 			// (children of gallerySelector)
 			var parseThumbnailElements = function(el) {
-				var thumbElements = el.childNodes,
+				var thumbElements = el.querySelectorAll('.rsig-item'),
 					numNodes = thumbElements.length,
 					items = [],
 					figureEl,
@@ -65,11 +65,6 @@ if(!defined('PE_photoswipe_LOADED')){
 
 					size = linkEl.getAttribute('data-size').split('x');
 
-					// skip if element is not an image wrapped in <a> tag
-					if (typeof linkEl == 'undefined') {
-						continue;
-					}
-					
 					// create slide object
 					item = {
 						src: linkEl.getAttribute('href'),
@@ -120,7 +115,7 @@ if(!defined('PE_photoswipe_LOADED')){
 				// find index of clicked item by looping through all child nodes
 				// alternatively, you may define index via data- attribute
 				var clickedGallery = clickedListItem.parentNode,
-					childNodes = clickedListItem.parentNode.childNodes,
+					childNodes = clickedListItem.parentNode.querySelectorAll('.rsig-item'),
 					numChildNodes = childNodes.length,
 					nodeIndex = 0,
 					index;

@@ -7,7 +7,7 @@
 	<copyright>Copyright (c) 2016 Karolis Martinkus</copyright>
 	<creationDate>February 20th, 2016</creationDate>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
-	<version>0.3</version>
+	<version>0.4</version>
 	<description>RSIG_DESC</description>
 	<config>
 		<fields name="params">

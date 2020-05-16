@@ -1,5 +1,5 @@
 # Responsive Simple Image Gallery
-Another Simple Image Gallery based gallery plugin, this time with a focus on providing a responsive gallery for today's responsive websites.
+Simple Image Gallery based gallery plugin, with a focus on providing a responsive gallery for today's responsive websites.
 Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.com/)
 
 You can see this gallery in action on the [demo page](https://rsig.martinkus.eu/)

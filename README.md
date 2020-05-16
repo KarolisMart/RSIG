@@ -2,7 +2,7 @@
 Another Simple Image Gallery based gallery plugin, this time with a focus on providing responsive gallery for todays responsive websites.
 Uses [Photoswipe](http://photoswipe.com/) and [Masonry](http://masonry.desandro.com/)
 
-You can see this gallery in action on my [demo page](https://test.martinkus.eu/)
+You can see this gallery in action on the [demo page](https://rsig.martinkus.eu/)
 
 ## Usage
 To use this plugin simply download zip of this repository, install, enable it and include an activation tag in article where you want your gallery displayed.

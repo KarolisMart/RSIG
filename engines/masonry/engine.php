@@ -24,8 +24,9 @@ if(!defined('MASONRY_LOADED')){
 		jQuery(window).load(function() {
 			jQuery('.grid').masonry({
 				itemSelector: '.grid-item',
-				columnWidth: '.rsig-sizer'
-				});
+				columnWidth: '.rsig-sizer',
+				fitWidth: true
+			});
 		});
 	");
 	$enginehtml ='';
